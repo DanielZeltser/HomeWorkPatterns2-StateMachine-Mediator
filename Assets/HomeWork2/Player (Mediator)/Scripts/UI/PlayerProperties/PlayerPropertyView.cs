@@ -8,7 +8,7 @@ namespace HomeWork2.MediatorPattern.UI
     {
         [SerializeField] private string _title;
         [SerializeField] private TextMeshProUGUI _view;
-        [SerializeField] PlayerConfig _playerConfig;
+        [SerializeField] private PlayerConfig _playerConfig;
 
         protected PlayerConfig Config => _playerConfig;
 
