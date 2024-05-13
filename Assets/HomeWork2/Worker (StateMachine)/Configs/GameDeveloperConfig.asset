@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ff0dfa75e1f3d4b888b9d937aaf097, type: 3}
+  m_Name: GameDeveloperConfig
+  m_EditorClassIdentifier: 
+  <WatchingDemonSlayerStateConfig>k__BackingField: {fileID: 11400000, guid: 3dc15f6fea2b0e948bb818812fb484ed, type: 2}
+  <GameDevelopingStateConfig>k__BackingField: {fileID: 11400000, guid: 35b1017c469a8d94c879afceec31c6e1, type: 2}
+  <MovingToOfficeConfig>k__BackingField: {fileID: 11400000, guid: c5fcbd716bc9da24c9e20a0a08ca5856, type: 2}
+  <RunningToHomeConfig>k__BackingField: {fileID: 11400000, guid: 946a42ee1de4b2747988a22788545f2a, type: 2}
