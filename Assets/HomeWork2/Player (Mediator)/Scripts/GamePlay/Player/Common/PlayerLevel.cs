@@ -1,13 +1,15 @@
 
+using System;
+
 namespace HomeWork2.MediatorPattern.GamePlay
 {
     public sealed class PlayerLevel
     {
-        private const int LevelUpValue = 1;
-        
         private readonly int _valueOnInitialize;
 
-        public int Value { get; private set; }
+        public int Value { get; private set; }  
+
+        public event Action Changed;
 
         public PlayerLevel(int level)
         {
@@ -15,9 +17,11 @@ namespace HomeWork2.MediatorPattern.GamePlay
             _valueOnInitialize = level;
         }
 
-        public void LevelUp()
+        public void TakeLevelUp(int levelUpValue)
         {
-            Value += LevelUpValue;
+            Value += levelUpValue;
+
+            Changed?.Invoke();
         }
 
         public void Reset()

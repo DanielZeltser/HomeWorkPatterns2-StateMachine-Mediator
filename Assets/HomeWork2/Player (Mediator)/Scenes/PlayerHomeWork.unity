@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &111380860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111380862}
+  - component: {fileID: 111380861}
+  m_Layer: 0
+  m_Name: GameRestartMediator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &111380861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111380860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71a1e5d674c68b47ac74a22fd1d780f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defeatPanel: {fileID: 1264531400}
+  _playerStatsMediator: {fileID: 1307465643}
+  _player: {fileID: 1636944720}
+--- !u!4 &111380862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111380860}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277081593
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe16821247a6714086baf35aaddac15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelUpValue: 1
 --- !u!1 &408805395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1636944720}
-  _restartButton: {fileID: 1649269956}
+  _playerStatsMediator: {fileID: 1307465643}
+  _gameRestartMediator: {fileID: 111380861}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806e8729822148147b95114f62f4184e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameplayMediator: {fileID: 1307465641}
-  _restartButton: {fileID: 1649269956}
+  _restartButton: {fileID: 1649269953}
 --- !u!1 &1307465640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,31 +1521,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307465642}
-  - component: {fileID: 1307465641}
+  - component: {fileID: 1307465643}
   m_Layer: 0
-  m_Name: GamePlayMediator
+  m_Name: PlayerStatsMediator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1307465641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307465640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71a1e5d674c68b47ac74a22fd1d780f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 1636944720}
-  _playerCollider: {fileID: 1636944721}
-  _playerLevelView: {fileID: 1725801149}
-  _playerHealthView: {fileID: 1895485990}
-  _restartButton: {fileID: 1649269956}
 --- !u!4 &1307465642
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,6 +1544,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307465643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307465640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea177703a55fff41af03f9118ba04e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1636944720}
+  _playerLevelView: {fileID: 1725801149}
+  _playerHealthView: {fileID: 1895485990}
 --- !u!1 &1410926750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1709,6 @@ GameObject:
   - component: {fileID: 1636944717}
   - component: {fileID: 1636944716}
   - component: {fileID: 1636944715}
-  - component: {fileID: 1636944721}
   - component: {fileID: 1636944720}
   m_Layer: 0
   m_Name: Hero
@@ -1801,18 +1846,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: a091535931fe56a4ca015f54a94b0c05, type: 2}
   _startPoint: {fileID: 408805397}
---- !u!114 &1636944721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636944714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb485c84a29e1844db2be97accb36dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1649269951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1858,6 @@ GameObject:
   - component: {fileID: 1649269955}
   - component: {fileID: 1649269954}
   - component: {fileID: 1649269953}
-  - component: {fileID: 1649269956}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -1896,7 +1928,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1649269954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1649269951}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 111380861}
+        m_TargetAssemblyTypeName: HomeWork2.MediatorPattern.GamePlay.GameRestartMediator,
+          Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1649269954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1935,18 +1992,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649269951}
   m_CullTransparentMesh: 1
---- !u!114 &1649269956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649269951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b62f96c1948cbe489e49d5130d01ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1725801147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,12 +2038,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725801147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab9f92abe5cfa5c43a66e12549fcbdc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f44df3bc55824e4c9e0c9da8018f47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _title: 'Player Level : '
   _view: {fileID: 836723090}
-  _playerConfig: {fileID: 11400000, guid: a091535931fe56a4ca015f54a94b0c05, type: 2}
 --- !u!1 &1773050792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,12 +2255,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895485988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1151d12e0dd7ef41850ad942c7134b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f44df3bc55824e4c9e0c9da8018f47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _title: 'Health : '
   _view: {fileID: 1108760801}
-  _playerConfig: {fileID: 11400000, guid: a091535931fe56a4ca015f54a94b0c05, type: 2}
 --- !u!1 &2100994201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,6 +2305,7 @@ SceneRoots:
   - {fileID: 344514964}
   - {fileID: 916610737}
   - {fileID: 1307465642}
+  - {fileID: 111380862}
   - {fileID: 1014587184}
   - {fileID: 1773050796}
   - {fileID: 277081597}
